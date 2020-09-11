@@ -1,3 +1,4 @@
+import './screens/Ep611Page.dart';
 import './screens/Ep591Page.dart';
 import './screens/Ep592Page.dart';
 import './screens/Ep601Page.dart';
@@ -93,7 +94,7 @@ class MyApp extends StatelessWidget {
 //==============================================          
       SplashScreen(
       seconds: 3,
-      navigateAfterSeconds: MyHomePage(title: 'See-Flutter เรียนรู้ไปด้วยกัน EP51-60',),
+      navigateAfterSeconds: MyHomePage(title: 'See-Flutter เรียนรู้ไปด้วยกัน EP61-70',),
       title: Text('Welcome to See-Flutter',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),),
       image: Image.asset('assets/icon/icon.png'),
       backgroundColor: Colors.orange,
@@ -149,6 +150,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //============================================================
 // CREATE BUTTON
 //============================================================
+            RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep611Page()),);},child: Text('EP61-1 - Download and Upload to Github'),),
             RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep602Page()),);},child: Text('EP60-2 - Logic: Edit Order Item'),),
             RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep601Page()),);},child: Text('EP60-1 - Logic: Order Item'),),            
             RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep592Page()),);},child: Text('EP59-2 - Logic: Add Order'),),
