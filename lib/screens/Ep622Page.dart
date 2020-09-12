@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 //=====================================================
 // MAIN CLASS
 //=====================================================
-class Ep602Page extends StatefulWidget {
+class Ep622Page extends StatefulWidget {
 //=====================================================
 // DECLARE VARIABLE
 //=====================================================
@@ -13,7 +13,7 @@ final String documentId;
 //=====================================================
 // CONSTUCTURE
 //===================================================== 
-const Ep602Page(
+const Ep622Page(
   {Key key, this.documentId}
 ): super (key: key);
 
@@ -21,13 +21,17 @@ const Ep602Page(
 // OVERRIDE STATE
 //=====================================================   
   @override
-  _Ep602PageState createState() => _Ep602PageState();
+  _Ep622PageState createState() => _Ep622PageState();
 }
 
 //=====================================================
 // STATE CLASS
 //=====================================================
-class _Ep602PageState extends State<Ep602Page> {
+class _Ep622PageState extends State<Ep622Page> {
+//=====================================================
+// SNACKBAR STEP#1
+//=====================================================  
+final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 //=====================================================
 // DECLARE LOCAL VARIABLE
 //=====================================================
@@ -50,7 +54,7 @@ class _Ep602PageState extends State<Ep602Page> {
           _imageUrl = value.data['imageUrl'];
           _qty = value.data['qty'];
           _menuNameEngController.text =  value.data['menuNameEng']; 
-          _menuDescEngController.text =  value.data['menuNameEng'];           
+          _menuDescEngController.text =  value.data['menuDescEng'];           
       });
       print('Save completed');
     }).catchError((error){
@@ -65,11 +69,15 @@ class _Ep602PageState extends State<Ep602Page> {
 // RETURN 
 //=====================================================    
     return Scaffold(
+//=====================================================
+// SNACKBAR STEP#2
+//=====================================================   
+      key: scaffoldKey,    
       appBar: AppBar(title: 
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('EP60-2: Edit Order'),
+            Text('EP62-2: Edit Order (qty)'),
 //=====================================================
 // EP60: GET PASSED PARAMETER FROM EP60-1 
 //=====================================================     
@@ -154,9 +162,34 @@ class _Ep602PageState extends State<Ep602Page> {
               width: double.infinity,
               child: RaisedButton(
                 color: Colors.blue,
-                onPressed: (){},child: Text('Order',style: TextStyle(
+                onPressed: (){
+//=====================================================
+// EP622: UPDATE QTY
+//===================================================== 
+        Firestore.instance.collection('TT_ORDERS').document(widget.documentId).updateData({'qty': _qty}).then((value) {
+          print('SAVE COMPLETED'); 
+//=====================================================
+// EP622: SNACKBAR STEP#3: SHOW SNACKBAR (OK)
+//===================================================== 
+          scaffoldKey.currentState.showSnackBar(SnackBar(backgroundColor: Colors.green,content: Text('Update Order Item ${widget.documentId} Completed'),));                    
+        })
+        .catchError((error){
+          print('UPDATE ERROR: $error');  
+//=====================================================
+// EP622: SNACKBAR STEP#3.2: SHOW SNACKBAR (ERROR)
+//===================================================== 
+          scaffoldKey.currentState.showSnackBar(SnackBar(backgroundColor: Colors.red,content: Text('Update Error: $error'),));                    
+        }).whenComplete(() {
+          print('UPDATE COMPLETED');
+        });
+
+                },child: Text('Save',style: TextStyle(
                   color: Colors.white,
-                  fontSize: 30,fontWeight: FontWeight.bold)),))            
+                  fontSize: 30,fontWeight: FontWeight.bold)),)),
+//=====================================================
+// EP622: ADD SIZED BOX TO AVOID WHEN SHOWING SNACKBAR
+//=====================================================         
+        SizedBox(height: 35,) ,           
         ],
 
       ),
