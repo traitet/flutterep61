@@ -1,3 +1,4 @@
+import './screens/Ep651Page.dart';
 import './screens/Ep641Page.dart';
 import './screens/Ep631Page.dart';
 import './screens/Ep621Page.dart';
@@ -154,6 +155,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //============================================================
 // CREATE BUTTON
 //============================================================
+           RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep651Page()),);},child: Text('EP65-1 - Design, modelling by class diagram'),), 
            RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep641Page()),);},child: Text('EP64-1 - Get Menu using Model'),), 
             RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep631Page()),);},child: Text('EP63-1 - Add Order using Model Class'),), 
             RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep621Page()),);},child: Text('EP62-1 - Logic: Order Item'),), 
