@@ -1,3 +1,4 @@
+import './screens/Ep671Page.dart';
 import './screens/Ep661Page.dart';
 import './screens/Ep651Page.dart';
 import './screens/Ep641Page.dart';
@@ -156,9 +157,10 @@ class _MyHomePageState extends State<MyHomePage> {
 //============================================================
 // CREATE BUTTON
 //============================================================
-           RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep661Page()),);},child: Text('EP66-1 - Class modelling for Ordering'),), 
-           RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep651Page()),);},child: Text('EP65-1 - Design, modelling by class diagram'),), 
-           RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep641Page()),);},child: Text('EP64-1 - Get Menu using Model'),), 
+            RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep671Page()),);},child: Text('EP67-1 - Model Mapping for get order'),), 
+            RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep661Page()),);},child: Text('EP66-1 - Class modelling for Ordering'),), 
+            RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep651Page()),);},child: Text('EP65-1 - Design, modelling by class diagram'),), 
+            RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep641Page()),);},child: Text('EP64-1 - Get Menu using Model'),), 
             RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep631Page()),);},child: Text('EP63-1 - Add Order using Model Class'),), 
             RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep621Page()),);},child: Text('EP62-1 - Logic: Order Item'),), 
             RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep622Page()),);},child: Text('EP62-2 - Logic: Edit Order Item (Qty)'),),
