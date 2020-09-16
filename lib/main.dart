@@ -1,3 +1,4 @@
+import './screens/Ep681Page.dart';
 import './screens/Ep671Page.dart';
 import './screens/Ep661Page.dart';
 import './screens/Ep651Page.dart';
@@ -157,6 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //============================================================
 // CREATE BUTTON
 //============================================================
+            RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep681Page()),);},child: Text('EP68-1 - How to develop E-menu & Design UI/Functions'),), 
             RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep671Page()),);},child: Text('EP67-1 - Model Mapping for get order'),), 
             RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep661Page()),);},child: Text('EP66-1 - Class modelling for Ordering'),), 
             RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep651Page()),);},child: Text('EP65-1 - Design, modelling by class diagram'),), 
