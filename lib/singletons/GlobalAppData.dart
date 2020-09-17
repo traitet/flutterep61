@@ -19,6 +19,9 @@ class GlobalAppData {
   String surname = '';
   String imageProfileUrl = '';
   String mobile = '';
+  String orderNo = '';
+  String tableNo = '';
+
 //==========================================================================
 // FACTORY APP DATA
 //==========================================================================  
