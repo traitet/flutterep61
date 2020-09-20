@@ -1,5 +1,4 @@
-import 'package:flutterep11/screens/Ep701Page.dart';
-
+import './screens/Ep701Page.dart';
 import './screens/Ep691Page.dart';
 import './screens/Ep681Page.dart';
 import './screens/Ep671Page.dart';
