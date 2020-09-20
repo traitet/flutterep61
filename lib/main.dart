@@ -1,3 +1,5 @@
+import 'package:flutterep11/screens/Ep701Page.dart';
+
 import './screens/Ep691Page.dart';
 import './screens/Ep681Page.dart';
 import './screens/Ep671Page.dart';
@@ -159,6 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //============================================================
 // CREATE BUTTON
 //============================================================
+            RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep701Page()),);},child: Text('EP70-1 - Plan Project, Agile, Scrum,Jira'),), 
             RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep691Page()),);},child: Text('EP69-1 - Design UI and Flow: Open Table'),), 
             RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep681Page()),);},child: Text('EP68-1 - How to develop E-menu & Design UI/Functions'),), 
             RaisedButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Ep671Page()),);},child: Text('EP67-1 - Model Mapping for get order'),), 
